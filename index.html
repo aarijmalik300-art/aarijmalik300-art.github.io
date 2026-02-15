@@ -3,23 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aarij Royal Dining</title>
+<title>Pizza Bar | Royal Luxury Pizzas</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
 scroll-behavior:smooth;
+font-family:'Poppins',sans-serif;
 }
 
 body{
-font-family:'Poppins',sans-serif;
-background:#0c0c0c;
+background:linear-gradient(to bottom,#000,#111);
 color:white;
-overflow-x:hidden;
 }
 
 /* NAVBAR */
@@ -30,62 +30,54 @@ padding:20px 10%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(0,0,0,0.4);
+background:rgba(0,0,0,0.6);
 backdrop-filter:blur(10px);
 z-index:1000;
 }
 
-nav h2{
+nav h1{
 font-family:'Playfair Display',serif;
 color:gold;
+font-size:28px;
 }
 
-nav a{
-color:white;
-text-decoration:none;
-margin-left:20px;
-font-size:14px;
-}
-
-/* HERO SECTION */
-header{
+/* HERO */
+.hero{
 height:100vh;
-background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.9)),
-url('https://images.unsplash.com/photo-1555992336-03a23c7b20ee');
-background-size:cover;
-background-position:center;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-animation:fadeIn 2s ease;
+padding:20px;
 }
 
-header h1{
+.hero h2{
 font-family:'Playfair Display',serif;
 font-size:60px;
-letter-spacing:3px;
+color:gold;
+margin-bottom:20px;
 }
 
-header p{
-margin:20px 0;
-color:#ccc;
+.hero p{
 font-size:18px;
+max-width:600px;
+margin-bottom:30px;
 }
 
 .btn{
-padding:12px 30px;
 background:gold;
 color:black;
+padding:15px 35px;
+border-radius:50px;
 text-decoration:none;
-border-radius:30px;
-font-weight:500;
+font-weight:bold;
 transition:0.3s;
 }
 
 .btn:hover{
-background:white;
+background:#d4af37;
+transform:scale(1.05);
 }
 
 /* SECTION */
@@ -94,178 +86,136 @@ padding:100px 10%;
 text-align:center;
 }
 
-h2{
+section h3{
 font-family:'Playfair Display',serif;
 font-size:40px;
 color:gold;
-margin-bottom:50px;
-}
-
-/* MENU */
-.menu{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-}
-
-.card{
-background:#1a1a1a;
-padding:30px;
-border-radius:20px;
-transition:0.4s;
-}
-
-.card:hover{
-transform:translateY(-15px);
-background:#222;
-}
-
-.price{
-color:gold;
-margin-top:10px;
+margin-bottom:30px;
 }
 
 /* GALLERY */
 .gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:20px;
+display:flex;
+gap:30px;
+justify-content:center;
+flex-wrap:wrap;
 }
 
 .gallery img{
-width:100%;
-border-radius:15px;
-transition:0.4s;
+width:300px;
+border-radius:20px;
+box-shadow:0 20px 40px rgba(0,0,0,0.7);
 }
 
-.gallery img:hover{
-transform:scale(1.05);
-}
-
-/* BOOKING FORM */
-form{
-max-width:500px;
-margin:auto;
+/* MENU */
+.menu-items{
 display:flex;
-flex-direction:column;
-gap:15px;
+justify-content:center;
+gap:40px;
+flex-wrap:wrap;
+}
+
+.menu-item{
+background:#111;
+padding:30px;
+border-radius:20px;
+width:250px;
+box-shadow:0 15px 30px rgba(0,0,0,0.6);
+}
+
+.menu-item h4{
+color:gold;
+margin-bottom:10px;
+}
+
+/* CONTACT */
+form{
+max-width:400px;
+margin:auto;
 }
 
 input,textarea{
+width:100%;
 padding:12px;
+margin:10px 0;
+border-radius:10px;
 border:none;
-border-radius:8px;
-background:#1a1a1a;
-color:white;
 }
 
 button{
-padding:12px;
-border:none;
-border-radius:30px;
 background:gold;
-cursor:pointer;
-font-weight:bold;
-}
-
-/* FOOTER */
-footer{
-background:#111;
-padding:30px;
-text-align:center;
-color:#aaa;
-}
-
-/* WHATSAPP FLOAT */
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:gold;
-padding:15px 18px;
-border-radius:50%;
-text-decoration:none;
 color:black;
+padding:12px;
+width:100%;
+border-radius:30px;
 font-weight:bold;
+border:none;
+cursor:pointer;
 }
 
-/* ANIMATION */
-@keyframes fadeIn{
-from{opacity:0;}
-to{opacity:1;}
+footer{
+padding:40px;
+text-align:center;
+background:black;
+color:gold;
 }
 
-@media(max-width:768px){
-header h1{
-font-size:40px;
-}
-}
 </style>
 </head>
 
 <body>
 
 <nav>
-<h2>Aarij Royal Dining</h2>
-<div>
-<a href="#menu">Menu</a>
-<a href="#gallery">Gallery</a>
-<a href="#booking">Book</a>
-</div>
+<h1>Pizza Bar</h1>
+<a href="https://wa.me/919012497796?text=Hello%20Pizza%20Bar%2C%20I%20want%20to%20order" target="_blank" class="btn">Order Now</a>
 </nav>
 
-<header>
-<h1>Luxury Taste Experience</h1>
-<p>Where Elegance Meets Flavor</p>
-<a href="https://wa.me/919999999999" class="btn">Reserve Now</a>
-</header>
+<div class="hero">
+<h2>Royal Taste. Legendary Pizza.</h2>
+<p>Experience handcrafted gourmet pizzas made with premium ingredients, rich flavors, and royal presentation.</p>
+<a href="https://wa.me/919012497796?text=Hello%20Pizza%20Bar%2C%20I%20want%20to%20order" target="_blank" class="btn">Order on WhatsApp</a>
+</div>
 
-<section id="menu">
-<h2>Signature Menu</h2>
-<div class="menu">
-<div class="card">
-<h3>Royal Butter Chicken</h3>
-<p>Premium creamy rich flavor.</p>
-<div class="price">₹399</div>
-</div>
-<div class="card">
-<h3>Luxury Veg Platter</h3>
-<p>Chef’s handpicked delights.</p>
-<div class="price">₹299</div>
-</div>
-<div class="card">
-<h3>Golden Dessert</h3>
-<p>Sweet royal ending.</p>
-<div class="price">₹199</div>
-</div>
-</div>
-</section>
-
-<section id="gallery">
-<h2>Our Ambience</h2>
+<section>
+<h3>Our Luxury Creations</h3>
 <div class="gallery">
-<img src="https://images.unsplash.com/photo-1552566626-52f8b828add9">
-<img src="https://images.unsplash.com/photo-1544148103-0773bf10d330">
-<img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1">
+<img src="https://images.unsplash.com/photo-1601924638867-3ecf6c29e6f2" alt="Pizza">
+<img src="https://images.unsplash.com/photo-1548365328-8b849e30c29e" alt="Pizza">
+<img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65" alt="Pizza">
 </div>
 </section>
 
-<section id="booking">
-<h2>Book a Table</h2>
-<form>
-<input type="text" placeholder="Your Name">
-<input type="tel" placeholder="Phone Number">
-<input type="date">
-<textarea placeholder="Special Request"></textarea>
-<button type="submit">Submit Booking</button>
+<section>
+<h3>Royal Menu</h3>
+<div class="menu-items">
+<div class="menu-item">
+<h4>Truffle Gold Pizza</h4>
+<p>Premium cheese, truffle oil, exotic herbs.</p>
+</div>
+<div class="menu-item">
+<h4>Royal Pepperoni</h4>
+<p>Imported pepperoni with rich mozzarella.</p>
+</div>
+<div class="menu-item">
+<h4>Veggie Supreme</h4>
+<p>Fresh farm vegetables & signature sauce.</p>
+</div>
+</div>
+</section>
+
+<section>
+<h3>Contact Us</h3>
+<form action="https://formspree.io/f/yourformid" method="POST">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<textarea name="message" placeholder="Your Message"></textarea>
+<button type="submit">Send Message</button>
 </form>
 </section>
 
 <footer>
-© 2026 Aarij Royal Dining | Designed for Luxury Experience
+<p>pizzabar.com | WhatsApp: +91 90124 97796</p>
 </footer>
-
-<a href="https://wa.me/919999999999" class="whatsapp">WA</a>
 
 </body>
 </html>
