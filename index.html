@@ -3,218 +3,236 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pizza Bar | Royal Luxury Pizzas</title>
+<title>Pizza Bar | Luxury Pizza Experience</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+    }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
-font-family:'Poppins',sans-serif;
-}
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #000;
+        color: #fff;
+    }
 
-body{
-background:linear-gradient(to bottom,#000,#111);
-color:white;
-}
+    /* NAVBAR */
+    header {
+        position: fixed;
+        width: 100%;
+        padding: 20px 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(0,0,0,0.6);
+        backdrop-filter: blur(6px);
+        z-index: 1000;
+    }
 
-/* NAVBAR */
-nav{
-position:fixed;
-width:100%;
-padding:20px 10%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-background:rgba(0,0,0,0.6);
-backdrop-filter:blur(10px);
-z-index:1000;
-}
+    .logo {
+        font-size: 24px;
+        font-weight: 600;
+        color: gold;
+        letter-spacing: 2px;
+    }
 
-nav h1{
-font-family:'Playfair Display',serif;
-color:gold;
-font-size:28px;
-}
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 30px;
+        transition: 0.3s;
+    }
 
-/* HERO */
-.hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-}
+    nav a:hover {
+        color: gold;
+    }
 
-.hero h2{
-font-family:'Playfair Display',serif;
-font-size:60px;
-color:gold;
-margin-bottom:20px;
-}
+    /* HERO SECTION */
+    .hero {
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+    }
 
-.hero p{
-font-size:18px;
-max-width:600px;
-margin-bottom:30px;
-}
+    .hero video {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
-.btn{
-background:gold;
-color:black;
-padding:15px 35px;
-border-radius:50px;
-text-decoration:none;
-font-weight:bold;
-transition:0.3s;
-}
+    .hero-overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.65);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
 
-.btn:hover{
-background:#d4af37;
-transform:scale(1.05);
-}
+    .hero h1 {
+        font-size: 60px;
+        color: gold;
+        margin-bottom: 20px;
+        letter-spacing: 3px;
+    }
 
-/* SECTION */
-section{
-padding:100px 10%;
-text-align:center;
-}
+    .hero p {
+        font-size: 20px;
+        margin-bottom: 30px;
+        color: #ddd;
+    }
 
-section h3{
-font-family:'Playfair Display',serif;
-font-size:40px;
-color:gold;
-margin-bottom:30px;
-}
+    .btn {
+        padding: 14px 35px;
+        background: gold;
+        color: black;
+        text-decoration: none;
+        font-weight: 600;
+        border-radius: 30px;
+        transition: 0.3s;
+    }
 
-/* GALLERY */
-.gallery{
-display:flex;
-gap:30px;
-justify-content:center;
-flex-wrap:wrap;
-}
+    .btn:hover {
+        background: #fff;
+        transform: scale(1.05);
+    }
 
-.gallery img{
-width:300px;
-border-radius:20px;
-box-shadow:0 20px 40px rgba(0,0,0,0.7);
-}
+    /* MENU SECTION */
+    .menu {
+        padding: 120px 60px;
+        text-align: center;
+    }
 
-/* MENU */
-.menu-items{
-display:flex;
-justify-content:center;
-gap:40px;
-flex-wrap:wrap;
-}
+    .menu h2 {
+        font-size: 40px;
+        margin-bottom: 60px;
+        color: gold;
+    }
 
-.menu-item{
-background:#111;
-padding:30px;
-border-radius:20px;
-width:250px;
-box-shadow:0 15px 30px rgba(0,0,0,0.6);
-}
+    .menu-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 40px;
+    }
 
-.menu-item h4{
-color:gold;
-margin-bottom:10px;
-}
+    .menu-item {
+        background: #111;
+        border-radius: 15px;
+        overflow: hidden;
+        transition: 0.4s;
+        border: 1px solid #222;
+    }
 
-/* CONTACT */
-form{
-max-width:400px;
-margin:auto;
-}
+    .menu-item:hover {
+        transform: translateY(-10px);
+        border: 1px solid gold;
+    }
 
-input,textarea{
-width:100%;
-padding:12px;
-margin:10px 0;
-border-radius:10px;
-border:none;
-}
+    .menu-item img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
 
-button{
-background:gold;
-color:black;
-padding:12px;
-width:100%;
-border-radius:30px;
-font-weight:bold;
-border:none;
-cursor:pointer;
-}
+    .menu-content {
+        padding: 20px;
+    }
 
-footer{
-padding:40px;
-text-align:center;
-background:black;
-color:gold;
-}
+    .menu-content h3 {
+        color: gold;
+        margin-bottom: 10px;
+    }
 
+    .price {
+        font-weight: 600;
+        margin-top: 10px;
+    }
+
+    /* FOOTER */
+    footer {
+        text-align: center;
+        padding: 40px;
+        background: #111;
+        color: #aaa;
+    }
+
+    @media(max-width: 768px){
+        .hero h1{
+            font-size: 36px;
+        }
+    }
 </style>
 </head>
 
 <body>
 
-<nav>
-<h1>Pizza Bar</h1>
-<a href="https://wa.me/919012497796?text=Hello%20Pizza%20Bar%2C%20I%20want%20to%20order" target="_blank" class="btn">Order Now</a>
-</nav>
+<header>
+    <div class="logo">PIZZA BAR</div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#">Reservation</a>
+    </nav>
+</header>
 
-<div class="hero">
-<h2>Royal Taste. Legendary Pizza.</h2>
-<p>Experience handcrafted gourmet pizzas made with premium ingredients, rich flavors, and royal presentation.</p>
-<a href="https://wa.me/919012497796?text=Hello%20Pizza%20Bar%2C%20I%20want%20to%20order" target="_blank" class="btn">Order on WhatsApp</a>
-</div>
+<section class="hero">
+    <!-- Replace video.mp4 with your pizza oven video -->
+    <video autoplay muted loop>
+        <source src="video.mp4" type="video/mp4">
+    </video>
 
-<section>
-<h3>Our Luxury Creations</h3>
-<div class="gallery">
-<img src="https://images.unsplash.com/photo-1601924638867-3ecf6c29e6f2" alt="Pizza">
-<img src="https://images.unsplash.com/photo-1548365328-8b849e30c29e" alt="Pizza">
-<img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65" alt="Pizza">
-</div>
+    <div class="hero-overlay">
+        <h1>Crafted in Fire</h1>
+        <p>Luxury Wood-Fired Pizza Experience</p>
+        <a href="#menu" class="btn">Explore Menu</a>
+    </div>
 </section>
 
-<section>
-<h3>Royal Menu</h3>
-<div class="menu-items">
-<div class="menu-item">
-<h4>Truffle Gold Pizza</h4>
-<p>Premium cheese, truffle oil, exotic herbs.</p>
-</div>
-<div class="menu-item">
-<h4>Royal Pepperoni</h4>
-<p>Imported pepperoni with rich mozzarella.</p>
-</div>
-<div class="menu-item">
-<h4>Veggie Supreme</h4>
-<p>Fresh farm vegetables & signature sauce.</p>
-</div>
-</div>
-</section>
+<section class="menu" id="menu">
+    <h2>Signature Pizzas</h2>
+    <div class="menu-grid">
+        <div class="menu-item">
+            <img src="https://images.unsplash.com/photo-1601924638867-3ec3e3b0f6c9" alt="Pizza">
+            <div class="menu-content">
+                <h3>Golden Margherita</h3>
+                <p>Fresh mozzarella, basil & premium tomato sauce.</p>
+                <div class="price">$18</div>
+            </div>
+        </div>
 
-<section>
-<h3>Contact Us</h3>
-<form action="https://formspree.io/f/yourformid" method="POST">
-<input type="text" name="name" placeholder="Your Name" required>
-<input type="email" name="email" placeholder="Your Email" required>
-<textarea name="message" placeholder="Your Message"></textarea>
-<button type="submit">Send Message</button>
-</form>
+        <div class="menu-item">
+            <img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65" alt="Pizza">
+            <div class="menu-content">
+                <h3>Truffle Royale</h3>
+                <p>Black truffle, mushrooms & aged parmesan.</p>
+                <div class="price">$26</div>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="https://images.unsplash.com/photo-1548365328-8b849e8f47e0" alt="Pizza">
+            <div class="menu-content">
+                <h3>Luxury Pepperoni</h3>
+                <p>Premium pepperoni with smoked cheese blend.</p>
+                <div class="price">$22</div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <footer>
-<p>pizzabar.com | WhatsApp: +91 90124 97796</p>
+    © 2026 Pizza Bar | Luxury Dining Experience
 </footer>
 
 </body>
