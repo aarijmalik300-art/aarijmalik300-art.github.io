@@ -3,228 +3,270 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pizza Bar | Luxury Experience</title>
+<title>Pizza Bar | Gourmet Pizzeria</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins', sans-serif;
+
+/* GLOBAL STYLES */
+body, html{
+  margin:0;
+  padding:0;
+  width:100%;
+  font-family:'Poppins',sans-serif;
 }
 
-body{
-    background:#000;
-    color:#fff;
+a{
+  color:inherit;
+  text-decoration:none;
 }
 
 /* NAVBAR */
 header{
-    position:fixed;
-    width:100%;
-    top:0;
-    left:0;
-    padding:20px 60px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:rgba(0,0,0,0.7);
-    backdrop-filter:blur(8px);
-    z-index:1000;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:20px 60px;
+  background:rgba(0,0,0,0.6);
+  z-index:999;
 }
 
-.logo{
-    font-size:26px;
-    font-weight:700;
-    color:gold;
-    letter-spacing:3px;
+header .logo{
+  font-size:28px;
+  font-weight:700;
+  color:#fff;
 }
 
-nav a{
-    color:#fff;
-    text-decoration:none;
-    margin-left:30px;
-    transition:0.3s;
+header nav a{
+  margin:0 20px;
+  font-weight:500;
+  color:#fff;
 }
 
-nav a:hover{
-    color:gold;
+header nav a:hover{
+  color:gold;
 }
 
-/* HERO */
+/* HERO (SLIDER) */
 .hero{
-    height:100vh;
-    background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.8)),
-    url("https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?auto=format&fit=crop&w=1920&q=80");
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:20px;
+  height:100vh;
+  overflow:hidden;
+  position:relative;
+}
+
+.hero .slide{
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0;
+  left:0;
+  background-position:center;
+  background-size:cover;
+  animation:fade 20s infinite;
+}
+
+.hero .slide:nth-child(1){background-image:url('https://source.unsplash.com/1920x1080/?gourmet,pizza');}
+.hero .slide:nth-child(2){background-image:url('https://source.unsplash.com/1920x1080/?restaurant,pizza');}
+.hero .slide:nth-child(3){background-image:url('https://source.unsplash.com/1920x1080/?artisan,pizza');}
+
+@keyframes fade {
+  0%   {opacity:1;}
+  33%  {opacity:0;}
+  66%  {opacity:0;}
+  100% {opacity:1;}
+}
+
+.hero .overlay{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.4);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+  color:#fff;
 }
 
 .hero h1{
-    font-size:65px;
-    color:gold;
-    letter-spacing:4px;
+  font-size:64px;
+  font-weight:700;
+  margin-bottom:15px;
 }
 
 .hero p{
-    margin-top:20px;
-    font-size:20px;
-    color:#ddd;
+  font-size:22px;
+  margin-bottom:25px;
 }
 
 .hero .btn{
-    margin-top:30px;
-    padding:14px 40px;
-    background:gold;
-    color:#000;
-    text-decoration:none;
-    font-weight:600;
-    border-radius:30px;
-    transition:0.3s;
+  padding:14px 36px;
+  background:gold;
+  font-weight:600;
+  color:#000;
+  border-radius:30px;
 }
 
-.hero .btn:hover{
-    background:#fff;
-    transform:scale(1.05);
+/* ABOUT SECTION */
+.about{
+  padding:100px 60px;
+  text-align:center;
+  background:#fff;
+  color:#222;
 }
 
-/* MENU */
+.about h2{
+  font-size:38px;
+  font-weight:700;
+  margin-bottom:15px;
+}
+
+.about p{
+  font-size:18px;
+  line-height:1.6;
+  max-width:800px;
+  margin:0 auto;
+}
+
+/* MENU SECTION */
 .menu{
-    padding:120px 60px;
-    text-align:center;
-    background:#000;
+  padding:100px 60px;
+  background:#000;
+  color:#fff;
+  text-align:center;
 }
 
 .menu h2{
-    font-size:42px;
-    color:gold;
-    margin-bottom:60px;
+  font-size:36px;
+  font-weight:700;
+  margin-bottom:40px;
 }
 
 .menu-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:40px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
 }
 
 .menu-item{
-    background:#111;
-    border-radius:20px;
-    overflow:hidden;
-    transition:0.4s;
-    border:1px solid #222;
-}
-
-.menu-item:hover{
-    transform:translateY(-12px);
-    border:1px solid gold;
+  background:#111;
+  border-radius:15px;
+  overflow:hidden;
+  padding:15px;
 }
 
 .menu-item img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
+  width:100%;
+  border-radius:12px;
 }
 
-.menu-content{
-    padding:25px;
+.menu-item h3{
+  margin:15px 0 8px;
+  font-size:20px;
+  font-weight:600;
+  color:gold;
 }
 
-.menu-content h3{
-    color:gold;
-    margin-bottom:10px;
-    font-weight:600;
+.menu-item p{
+  font-size:14px;
+  color:#ddd;
 }
 
-.menu-content p{
-    color:#ccc;
-    font-size:14px;
-}
-
-.price{
-    margin-top:12px;
-    font-weight:600;
+/* BUTTONS */
+.btn-secondary{
+  display:inline-block;
+  margin:20px 10px;
+  padding:12px 28px;
+  background:gold;
+  color:#000;
+  font-weight:600;
+  border-radius:28px;
 }
 
 /* FOOTER */
 footer{
-    text-align:center;
-    padding:40px;
-    background:#111;
-    color:#888;
+  background:#111;
+  color:#aaa;
+  text-align:center;
+  padding:30px 0;
+  font-size:14px;
 }
 
-/* RESPONSIVE */
-@media(max-width:768px){
-    .hero h1{
-        font-size:38px;
-    }
-}
 </style>
+
 </head>
 
 <body>
 
 <header>
-    <div class="logo">PIZZA BAR</div>
-    <nav>
-        <a href="#">Home</a>
-        <a href="#menu">Menu</a>
-        <a href="#">Reservation</a>
-    </nav>
+  <div class="logo">PIZZA BAR</div>
+  <nav>
+    <a href="#menu">Menu</a>
+    <a href="#about">About</a>
+    <a href="#reserve">Reserve</a>
+  </nav>
 </header>
 
 <section class="hero">
-    <div>
-        <h1>Crafted in Fire</h1>
-        <p>Luxury Wood-Fired Pizza Experience</p>
-        <a href="#menu" class="btn">Explore Menu</a>
-    </div>
+  <div class="slide"></div>
+  <div class="slide"></div>
+  <div class="slide"></div>
+
+  <div class="overlay">
+    <h1>Gourmet Pizza Experience</h1>
+    <p>From our oven to your table — authentic quality & taste.</p>
+    <a href="#menu" class="btn">View Menu</a>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <h2>About Us</h2>
+  <p>Welcome! At Pizza Bar we celebrate premium ingredients and culinary craftsmanship — just like the world-famous Pizzeria Mozza. Our menu is curated for pizza lovers who want more than just a meal. Experience flavor, passion and excellence in every bite. :contentReference[oaicite:3]{index=3}</p>
 </section>
 
 <section class="menu" id="menu">
-    <h2>Signature Pizzas</h2>
-    <div class="menu-grid">
+  <h2>Our Signature Pizzas</h2>
 
-        <div class="menu-item">
-            <img src="https://images.unsplash.com/photo-1601924582975-7e31e0cfd8c6?auto=format&fit=crop&w=800&q=80">
-            <div class="menu-content">
-                <h3>Golden Margherita</h3>
-                <p>Fresh mozzarella, basil & premium tomato sauce.</p>
-                <div class="price">$18</div>
-            </div>
-        </div>
-
-        <div class="menu-item">
-            <img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65?auto=format&fit=crop&w=800&q=80">
-            <div class="menu-content">
-                <h3>Truffle Royale</h3>
-                <p>Black truffle, mushrooms & aged parmesan.</p>
-                <div class="price">$26</div>
-            </div>
-        </div>
-
-        <div class="menu-item">
-            <img src="https://images.unsplash.com/photo-1548365328-8b849e8f47e0?auto=format&fit=crop&w=800&q=80">
-            <div class="menu-content">
-                <h3>Luxury Pepperoni</h3>
-                <p>Premium pepperoni with smoked cheese blend.</p>
-                <div class="price">$22</div>
-            </div>
-        </div>
-
+  <div class="menu-grid">
+    <div class="menu-item">
+      <img src="https://source.unsplash.com/500x400/?italian,pizza">
+      <h3>Classic Margherita</h3>
+      <p>Fresh basil, mozzarella & rich tomato sauce.</p>
     </div>
+
+    <div class="menu-item">
+      <img src="https://source.unsplash.com/500x400/?gourmet,pizza2">
+      <h3>Truffle Special</h3>
+      <p>Black truffle & artisan mushrooms.</p>
+    </div>
+
+    <div class="menu-item">
+      <img src="https://source.unsplash.com/500x400/?pepperoni,pizza">
+      <h3>Pepperoni Deluxe</h3>
+      <p>Spicy pepperoni with premium cheese.</p>
+    </div>
+
+  </div>
+
+  <a href="#" class="btn-secondary">Order Now</a>
+</section>
+
+<section class="about" id="reserve">
+  <h2>Reserve A Table</h2>
+  <p>Contact us or reserve your table for a gourmet pizza experience.</p>
+  <a href="#" class="btn-secondary">Make Reservation</a>
 </section>
 
 <footer>
-    © 2026 Pizza Bar | Luxury Dining Experience
+  © 2026 Pizza Bar | All Rights Reserved
 </footer>
 
 </body>
